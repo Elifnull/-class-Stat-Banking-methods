@@ -27,7 +27,7 @@ class Bankaccount:
         return self
 
     def display_account_info(self):
-        print(f'Current Balance: $ {self.balance}')
+        print(f'Account Name: {self.user_name}\nCurrent Balance: $ {self.balance}')
         return self
 
     def yield_intrest(self):
@@ -38,7 +38,9 @@ class Bankaccount:
         return self
     @classmethod
     def see_all(cls):
-        print(f'the eye that sees all sees: {cls.all_accounts}')
+        ##print(f'the eye that sees all sees: {cls.all_accounts}')
+        for account in cls.all_accounts:
+            account.display_account_info()
 
 
 olga = Bankaccount("olga", .07, 1000).deposit(750).deposit(5).deposit(75).withdrawl(775).yield_intrest().display_account_info()

@@ -1,8 +1,8 @@
 class Bankaccount:
     all_accounts = []
-    def __init__(self, user_name, int_rate = .07, balance = 0):
+    def __init__(self, int_rate = .07, balance = 0):
         #instance level parameters
-        self.user_name = user_name
+        #self.user_name = user_name
         self.int_rate = int_rate
         self.balance = balance
 
@@ -27,7 +27,7 @@ class Bankaccount:
         return self
 
     def display_account_info(self):
-        print(f'Account Name: {self.user_name}\nCurrent Balance: $ {self.balance}')
+        print(f'Current Balance: $ {self.balance}')
         return self
 
     def yield_intrest(self):
@@ -43,9 +43,9 @@ class Bankaccount:
             account.display_account_info()
 
 
-olga = Bankaccount("olga", .07, 1000).deposit(750).deposit(5).deposit(75).withdrawl(775).yield_intrest().display_account_info()
+olga = Bankaccount(.07, 1000).deposit(750).deposit(5).deposit(75).withdrawl(775).yield_intrest().display_account_info()
 
-serge = Bankaccount("serge")
+serge = Bankaccount()
 
 serge.deposit(100).deposit(98).withdrawl(20).withdrawl(20).withdrawl(35).withdrawl(40).yield_intrest().display_account_info()
 
